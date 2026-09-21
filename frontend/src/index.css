@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkBg: #111111;
+  --color-darkCard: #1a1a1a;
+  --color-darkText: #e0e0e0;
+  --color-lightBg: #fdfbf7;
+  --color-lightCard: #f5f0e6;
+  --color-primary: #a85a3c;
+  --color-primaryHover: #8c4930;
+  --color-lightText: #333333;
+  --color-grayText: #777777;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-cursive: 'Caveat', cursive;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Tailwind takes care of this */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html.dark {
+  color-scheme: dark;
+}
