@@ -2,10 +2,10 @@ import React from 'react';
 
 const BeyondBooks = ({ desktopMode = false }) => {
   const hobbies = [
-    { name: "Sketching", image: "/assets/sketching_creative.jpg" },
-    { name: "Singing", image: "/assets/singing_creative.jpg" },
-    { name: "Dancing", image: "/assets/dancing_creative.jpg" },
-    { name: "Anchoring", image: "/assets/anchoring_creative.jpg" }
+    { name: "Sketching", image: "/hobbies/sketching.png" },
+    { name: "Reading", image: "/hobbies/reading.png" },
+    { name: "Workout", image: "/hobbies/workout.png" },
+    { name: "Anchoring", image: "/hobbies/anchoring.png" }
   ];
 
   return (

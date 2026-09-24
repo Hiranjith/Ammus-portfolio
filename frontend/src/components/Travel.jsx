@@ -2,12 +2,12 @@ import React from 'react';
 
 const Travel = ({ desktopMode = false }) => {
   const places = [
-    { name: "Meghalaya", image: "/assets/travel_meghalaya.jpg" },
-    { name: "Assam", image: "/assets/travel_assam.jpg" },
-    { name: "Himachal", image: "/assets/travel_himachal.jpg" },
-    { name: "Goa", image: "/assets/travel_goa.jpg" },
-    { name: "Kerala", image: "/assets/travel_kerala.jpg" },
-    { name: "Sri Lanka", image: "/assets/travel_srilanka.jpg" }
+    { name: "Ammus", image: "/travel/ammus.png" },
+    { name: "Beach", image: "/travel/beach.png" },
+    { name: "Kolukkumala", image: "/travel/kolukkumala.png" },
+    { name: "Kollangode", image: "/travel/kollangode.png" },
+    { name: "Munnar", image: "/travel/munnar.png" },
+    { name: "Palakkad", image: "/travel/palakkad.png" }
   ];
 
   if (desktopMode) {
@@ -38,11 +38,10 @@ const Travel = ({ desktopMode = false }) => {
           <div className="flex flex-row gap-3">
             {places.map((place, idx) => (
               <div key={idx} className="flex flex-col items-center group w-[105px] flex-shrink-0">
-                <div className="w-full h-[90px] rounded-lg overflow-hidden mb-1.5 border border-gray-200 dark:border-gray-800 shadow-sm relative bg-gray-100 dark:bg-gray-800">
+                <div className="w-full h-[90px] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm relative bg-gray-100 dark:bg-gray-800">
                   <img src={place.image} alt={place.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
-                <span className="text-[10px] font-medium text-grayText">{place.name}</span>
               </div>
             ))}
           </div>

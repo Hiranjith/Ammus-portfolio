@@ -39,7 +39,7 @@ const WhatIDo = ({ desktopMode = false }) => {
       title: "UPSC",
       subtitle: "Teaching",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-[#e69b3e]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-[#e69b3e]">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
         </svg>
       ),
@@ -50,7 +50,7 @@ const WhatIDo = ({ desktopMode = false }) => {
       title: "SSC",
       subtitle: "Teaching",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-[#c26543]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-[#c26543]">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
         </svg>
       ),
@@ -60,7 +60,7 @@ const WhatIDo = ({ desktopMode = false }) => {
       title: "PSC",
       subtitle: "Teaching",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-[#2c6565]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7 text-[#2c6565]">
           <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
         </svg>
       ),
@@ -102,20 +102,20 @@ const WhatIDo = ({ desktopMode = false }) => {
 
   // Mobile Render
   return (
-    <section id="teaching" className="py-8 px-6 flex flex-col border-b border-gray-200 dark:border-gray-800">
-      <div className="w-full mb-8 text-left">
-        <h2 className="font-serif font-medium mb-1 text-3xl">What I Do</h2>
-        <div className="w-40 h-1 bg-gradient-to-r from-[#d97757] to-transparent rounded-full opacity-90 rotate-[-1deg] origin-left"></div>
+    <section id="teaching" className="py-6 px-4 flex flex-col border-b border-gray-200 dark:border-gray-800">
+      <div className="w-full mb-5 text-left">
+        <h2 className="font-serif font-medium mb-1 text-2xl">What I Do</h2>
+        <div className="w-32 h-1 bg-gradient-to-r from-[#d97757] to-transparent rounded-full opacity-90 rotate-[-1deg] origin-left"></div>
       </div>
       
-      <div className="flex flex-row overflow-x-auto gap-3 pb-4 snap-x no-scrollbar -mx-6 px-6">
+      <div className="flex flex-row justify-between gap-2 pb-2">
         {mobileCards.map((card, idx) => (
-          <div key={idx} className={`min-w-[125px] flex-1 py-7 px-4 flex-shrink-0 rounded-2xl flex flex-col items-center text-center snap-center ${card.bgClass} shadow-sm border border-transparent dark:border-gray-800`}>
-            <div className="mb-4">
+          <div key={idx} className={`flex-1 py-4 px-2 rounded-xl flex flex-col items-center text-center ${card.bgClass} shadow-sm border border-transparent dark:border-gray-800`}>
+            <div className="mb-2">
               {card.icon}
             </div>
-            <h3 className="font-sans font-bold text-lg text-gray-900 dark:text-gray-100 leading-tight tracking-wide">{card.title}</h3>
-            <span className="text-gray-600 dark:text-gray-400 text-[13px] font-medium">{card.subtitle}</span>
+            <h3 className="font-sans font-bold text-[15px] text-gray-900 dark:text-gray-100 leading-tight tracking-wide">{card.title}</h3>
+            <span className="text-gray-600 dark:text-gray-400 text-[11px] font-medium">{card.subtitle}</span>
           </div>
         ))}
       </div>

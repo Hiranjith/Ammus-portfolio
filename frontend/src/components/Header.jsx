@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Header = ({ darkMode, toggleDarkMode }) => {
+const Header = ({ darkMode, toggleDarkMode, currentHash }) => {
+  // Default to #home if hash is empty
+  const activeHash = currentHash || '#home';
+  
+  const getLinkClass = (hash) => {
+    const isActive = activeHash === hash;
+    return `hover:text-primary transition-colors ${isActive ? 'text-primary border-b-2 border-primary pb-1' : ''}`;
+  };
+
   return (
     <header className="flex justify-between items-center py-4 px-6 md:px-12 border-b border-gray-200 dark:border-gray-800 bg-lightBg dark:bg-darkBg sticky top-0 z-50">
       <div className="flex flex-col">
@@ -9,13 +17,13 @@ const Header = ({ darkMode, toggleDarkMode }) => {
       </div>
 
       <nav className="hidden md:flex space-x-8 text-sm font-medium">
-        <a href="#home" className="hover:text-primary transition-colors text-primary border-b-2 border-primary pb-1">Home</a>
-        <a href="#about" className="hover:text-primary transition-colors">About</a>
-        <a href="#teaching" className="hover:text-primary transition-colors">Teaching</a>
-        <a href="#journey" className="hover:text-primary transition-colors">Journey</a>
-        <a href="#creative" className="hover:text-primary transition-colors">Creative</a>
-        <a href="#travel" className="hover:text-primary transition-colors">Travel</a>
-        <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+        <a href="#home" className={getLinkClass('#home')}>Home</a>
+        <a href="#about" className={getLinkClass('#about')}>About</a>
+        <a href="#teaching" className={getLinkClass('#teaching')}>Teaching</a>
+        <a href="#journey" className={getLinkClass('#journey')}>Journey</a>
+        <a href="#creative" className={getLinkClass('#creative')}>Creative</a>
+        <a href="#travel" className={getLinkClass('#travel')}>Travel</a>
+        <a href="#contact" className={getLinkClass('#contact')}>Contact</a>
       </nav>
 
       <div className="flex items-center space-x-4">
