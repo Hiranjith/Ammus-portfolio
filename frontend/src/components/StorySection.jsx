@@ -2,10 +2,10 @@ import React from 'react';
 
 const qualifications = [
   {
-    title: 'Post Graduation',
-    desc1: 'M.A. in [Subject]',
-    desc2: 'University Name',
-    desc3: 'Year of Passing',
+    title: 'UPSC Civil Service Coaching',
+    desc1: 'Govt. Civil Service Academy, Palakkad',
+    desc2: '',
+    desc3: '2023-2024',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
@@ -14,9 +14,9 @@ const qualifications = [
   },
   {
     title: 'Graduation',
-    desc1: 'B.A. in [Subject]',
-    desc2: 'University Name',
-    desc3: 'Year of Passing',
+    desc1: 'BSc Mathematics',
+    desc2: 'Calicut university',
+    desc3: '2016-2019',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
@@ -49,7 +49,7 @@ const qualifications = [
 
 const StorySection = () => {
   return (
-    <section className="w-full bg-[#fdfbf7] dark:bg-darkBg py-16">
+    <section className="w-full bg-[#fdfbf7] dark:bg-darkBg pt-6 pb-16 md:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
           
@@ -75,7 +75,7 @@ const StorySection = () => {
             </div>
 
             {/* Handwritten Signature/Quote */}
-            <div className="mt-10 mb-4 flex flex-col items-center self-center md:self-end md:mr-10 transform -rotate-12">
+            <div className="mt-10 mb-4 hidden md:flex flex-col items-center self-center md:self-end md:mr-10 transform -rotate-12">
               <p className="font-cursive text-2xl md:text-3xl text-primary opacity-90">
                 Grateful
               </p>
@@ -88,13 +88,9 @@ const StorySection = () => {
             </div>
           </div>
 
-          {/* Column 2: Image Placeholder */}
-          <div className="flex justify-center items-center h-[500px] lg:h-auto rounded-xl bg-gray-200 dark:bg-[#1a1a1a] overflow-hidden relative border border-gray-300 dark:border-gray-800">
-            {/* 
-              Add your image here like this:
-              <img src="/path-to-middle-image.jpg" alt="Ammu Krishnan" className="w-full h-full object-cover" /> 
-            */}
-            <span className="text-gray-500 dark:text-gray-600 font-medium">Image Placeholder</span>
+          {/* Column 2: Image */}
+          <div className="hidden md:flex justify-center items-center h-[500px] lg:h-auto rounded-xl bg-gray-200 dark:bg-[#1a1a1a] overflow-hidden relative border border-gray-300 dark:border-gray-800">
+            <img src="/assets/about-main-image.png" alt="Ammu Krishnan" className="w-full h-full object-cover" />
           </div>
 
           {/* Column 3: Educational Qualification */}

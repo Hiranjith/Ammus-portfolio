@@ -65,22 +65,22 @@ const languages = [
     name: 'English',
     nativeName: 'English',
     proficiency: 'Fluent',
-    icon: <span className="text-lg">🇬🇧</span>,
+    icon: <span className="text-lg text-blue-700 dark:text-blue-400">A</span>,
     iconBg: 'bg-blue-100 dark:bg-blue-900/30'
   },
   {
     name: 'Hindi',
     nativeName: 'हिंदी',
     proficiency: 'Conversational',
-    icon: <span className="text-lg">🇮🇳</span>,
+    icon: <span className="text-lg text-orange-700 dark:text-orange-400">अ</span>,
     iconBg: 'bg-orange-100 dark:bg-orange-900/30'
   },
   {
-    name: '(Any other language)',
-    nativeName: 'Conversational',
+    name: 'Tamil',
+    nativeName: 'தமிழ்',
     proficiency: 'Conversational',
-    icon: <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.333A4.14 4.14 0 0 0 5 21.75a4.14 4.14 0 0 0 2.11-1.39A8.995 8.995 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>,
-    iconBg: 'bg-stone-200 dark:bg-stone-800 text-stone-600 dark:text-stone-300'
+    icon: <span className="text-lg">த</span>,
+    iconBg: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
   }
 ];
 
@@ -93,32 +93,47 @@ const SkillsAndLanguages = () => {
           {/* Column 1: Skills (Takes 3 columns on large screens) */}
           <div className="lg:col-span-3">
             <h2 className="font-serif text-2xl text-lightText dark:text-white font-medium mb-1">Skills</h2>
-            <svg className="w-20 h-2 text-primary opacity-80 mb-5" viewBox="0 0 100 10" preserveAspectRatio="none">
-              <path d="M0,5 Q50,0 100,5" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
+            <p className="text-[13px] text-grayText dark:text-gray-400 mb-5">
+              <span className="text-primary font-medium">Tools</span> I use to create impact
+            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {skills.map((skill, index) => (
-                <div key={index} className="flex items-center p-2 rounded-full bg-[#f8f3eb] dark:bg-[#1a1a1a] shadow-sm transition-transform hover:scale-[1.02]">
-                  <div className={`w-8 h-8 rounded-full flex flex-shrink-0 items-center justify-center mr-3 ${skill.colorClass}`}>
+                <div key={index} className="flex items-center p-2.5 rounded-2xl bg-white dark:bg-[#181818] shadow-sm transition-transform hover:scale-[1.02] border border-gray-100 dark:border-[#2a2a2a]">
+                  <div className={`w-10 h-10 rounded-full flex flex-shrink-0 items-center justify-center mr-3 ${skill.colorClass}`}>
                     {skill.icon}
                   </div>
-                  <span className="text-[12px] font-medium text-lightText dark:text-gray-200">{skill.name}</span>
+                  <span className="text-[12px] font-medium text-lightText dark:text-gray-200 leading-tight">{skill.name}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Column 2: Languages (Takes 2 columns on large screens) */}
           <div className="lg:col-span-2">
-            <h2 className="font-serif text-2xl text-lightText dark:text-white font-medium mb-1">Languages Known</h2>
-            <svg className="w-40 h-2 text-primary opacity-80 mb-5" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <h2 className="font-serif text-2xl text-lightText dark:text-white font-medium mb-4 md:mb-1">Languages Known</h2>
+            <svg className="hidden md:block w-40 h-2 text-primary opacity-80 mb-5" viewBox="0 0 100 10" preserveAspectRatio="none">
               <path d="M0,5 Q50,0 100,5" stroke="currentColor" strokeWidth="2" fill="none"/>
             </svg>
 
-            <div className="flex flex-col space-y-3">
+            {/* Mobile Layout (2x2 Grid) */}
+            <div className="grid md:hidden grid-cols-2 gap-y-6 w-full">
               {languages.map((lang, index) => (
-                <div key={index} className="flex items-center justify-between p-3 rounded-2xl bg-[#f8f3eb] dark:bg-[#1a1a1a] shadow-sm transition-transform hover:scale-[1.02]">
+                <div key={`mobile-lang-${index}`} className={`flex items-center space-x-2 sm:space-x-3 ${index % 2 === 0 ? 'border-r border-gray-300 dark:border-gray-800 pr-2' : 'pl-2 sm:pl-4'}`}>
+                  <div className={`w-10 h-10 rounded-full flex flex-shrink-0 items-center justify-center ${lang.iconBg}`}>
+                    {lang.icon}
+                  </div>
+                  <div className="flex flex-col overflow-hidden">
+                    <span className="text-[13px] sm:text-[14px] font-semibold text-lightText dark:text-white leading-tight truncate">{lang.name}</span>
+                    <span className="text-[11px] sm:text-[12px] text-grayText dark:text-gray-400 leading-tight mt-0.5 truncate">{lang.proficiency}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop Layout (Vertical list) */}
+            <div className="hidden md:flex flex-col space-y-3">
+              {languages.map((lang, index) => (
+                <div key={`desktop-lang-${index}`} className="flex items-center justify-between p-3 rounded-2xl bg-[#f8f3eb] dark:bg-[#1a1a1a] shadow-sm transition-transform hover:scale-[1.02]">
                   <div className="flex items-center">
                     <div className={`w-10 h-10 rounded-full flex flex-shrink-0 items-center justify-center mr-3 ${lang.iconBg}`}>
                       {lang.icon}
