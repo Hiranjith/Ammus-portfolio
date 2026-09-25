@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import MobileNav from './components/MobileNav';
 import SplashScreen from './components/SplashScreen';
 import About from './components/About';
+import Journey from './components/Journey';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
@@ -66,6 +67,10 @@ function App() {
             {currentHash === '#about' ? (
               <main className="w-full">
                 <About darkMode={darkMode} />
+              </main>
+            ) : currentHash === '#journey' ? (
+              <main className="w-full">
+                <Journey darkMode={darkMode} />
               </main>
             ) : (
               <main className="w-full">
