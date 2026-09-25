@@ -19,7 +19,6 @@ const Header = ({ darkMode, toggleDarkMode, currentHash }) => {
       <nav className="hidden md:flex space-x-8 text-sm font-medium">
         <a href="#home" className={getLinkClass('#home')}>Home</a>
         <a href="#about" className={getLinkClass('#about')}>About</a>
-        <a href="#teaching" className={getLinkClass('#teaching')}>Teaching</a>
         <a href="#journey" className={getLinkClass('#journey')}>Journey</a>
         <a href="#creative" className={getLinkClass('#creative')}>Creative</a>
         <a href="#travel" className={getLinkClass('#travel')}>Travel</a>

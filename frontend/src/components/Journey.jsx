@@ -72,6 +72,19 @@ const Journey = ({ darkMode }) => {
 
       {/* Journey Main Content */}
       <JourneyContent darkMode={darkMode} />
+
+      {/* Footer Banner */}
+      <div className="w-full relative">
+        <img 
+          src={`/banner/${darkMode ? 'ld' : 'll'}-journey-footer.png`} 
+          alt="Journey Footer Banner" 
+          className="w-full h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] object-cover object-center"
+        />
+        {/* Top Gradient Overlay */}
+        <div className="absolute top-0 left-0 w-full h-16 md:h-32 bg-gradient-to-b from-lightBg to-transparent dark:from-darkBg pointer-events-none"></div>
+        {/* Bottom Gradient Overlay */}
+        <div className="absolute bottom-0 left-0 w-full h-16 md:h-32 bg-gradient-to-t from-lightBg to-transparent dark:from-darkBg pointer-events-none"></div>
+      </div>
     </div>
   );
 };
